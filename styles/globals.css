@@ -1,0 +1,98 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --foreground-rgb: 0, 0, 0;
+  --background-start-rgb: 214, 219, 220;
+  --background-end-rgb: 255, 255, 255;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --foreground-rgb: 255, 255, 255;
+    --background-start-rgb: 0, 0, 0;
+    --background-end-rgb: 0, 0, 0;
+  }
+}
+
+body {
+  color: rgb(var(--foreground-rgb));
+  background: var(--background-end-rgb);
+}
+
+.container-secondary {
+  @apply container mx-auto px-4 sm:px-6 lg:px-8 max-w-sm;
+}
+
+.container-main {
+  @apply container mx-auto px-4 sm:px-6 lg:px-8;
+}
+
+
+.card-wrapper {
+  @apply flex p-6 shadow-xl flex-col rounded-lg bg-gradient-to-br from-blue-100 to-purple-200;
+}
+
+.card-text {
+  @apply text-slate-600;
+}
+
+.card-heading {
+  @apply text-xl font-semibold mb-2 bg-clip-text text-transparent bg-gradient-to-br from-blue-600 to-purple-800;
+}
+
+.card-button {
+  @apply bg-transparent	p-0 hover:text-slate-600 text-slate-500;
+}
+
+
+.currency-heading {
+  @apply text-3xl mb-8 font-semibold text-slate-600;
+}
+
+.currency-button {
+  @apply bg-transparent p-0 hover:text-slate-600 text-slate-500;
+}
+
+.colorWheel {
+  position: relative;
+  width: 295px;
+  height: 295px;
+  margin: 0 auto;
+  transform-origin: 50px 150px;
+  user-select: none;
+  transition: all 0.5s linear;
+  border-radius: 50%;
+  overflow: hidden;
+}
+
+.colorWheel div {
+  position: absolute;
+  border-style: solid;
+  border-width: 150px 50px;
+  box-sizing: border-box;
+  right: 33%;
+  cursor: pointer;
+}
+
+.colorWheel span {
+  position: absolute;
+  z-index: 99;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.colorWheel:after {
+  content: "";
+  width: 100px;
+  height: 100px;
+  overflow: hidden;
+  position: absolute;
+  top: 100px;
+  right: 33%;
+  border-radius: 100%;
+  background: #ffffff;
+  transform: scale(1.5);
+}
